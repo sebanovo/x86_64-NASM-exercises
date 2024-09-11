@@ -1,0 +1,38 @@
+segment .data
+segment .bss
+segment .text 
+	global main 
+main:
+	; limpiamos registros de proposito general
+	XOR  RAX,RAX
+	XOR  RBX,RBX
+	XOR  RCX,RCX
+	XOR  RDX,RDX
+	XOR  R8,R8
+	XOR  R9,R9
+	XOR  R10,R10
+	XOR  R11,R11
+	XOR  R12,R12
+	XOR  R13,R13
+	XOR  R14,R14
+	XOR  R15,R15
+	
+	MOV EAX, 127
+	; 32 bits
+	; 0000 0000 0000 0000 0000 0000 0111 1111  
+	; hex = 0000007F 
+	MOV EBX, 128
+	; 0000 0000 0000 0000 0000 0000 1000 0000
+	; hex = 00000080
+	MOV ECX, 64
+	; 0000 0000 0000 0000 0000 0000 0100 0000
+	; hex = 00000040
+	MOV EDX, -1
+	; (+1) 0000 0000 0000 0000 0000 0000 0000 0001
+	; (-1) 1111 1111 1111 1111 1111 1111 1111 1111
+	; hex = FFFFFFFF
+	MOV RDX, RAX
+	; hex = 00000000 0000007F
+	MOV RCX, RAX	
+	; hex = 00000000 0000007F
+	ret
