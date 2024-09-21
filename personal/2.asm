@@ -1,3 +1,4 @@
+;; PIDE 2 NÚMEROS E IMPRIME LA SUMA
 segment .data
 	format db "%d",0 
 
@@ -6,8 +7,8 @@ segment .data
 	mensaje3 db "%d + %d = %d", 0
 
 segment .bss
-	numero1 resb 1
-	numero2 resb 1
+	numero1 resb 4 ; entero de 32 bits con signo
+	numero2 resb 4 ; entero de 32 bits con signo
 
 segment .text
     extern printf
@@ -31,12 +32,12 @@ main:
     mov rdx, numero2
 	call scanf
 
-	mov rcx, mensaje3
-	movzx rdx, byte[numero1]
-	movzx r8, byte[numero2]
-    mov r9, rdx
-    add r9, r8
-	call printf
+    mov rcx, mensaje3
+    mov edx, [numero1]    
+    mov r8d, [numero2]    
+    mov r9d, edx 
+    add r9d, r8d   
+    call printf
 
 	add rsp, 0x20
 	ret

@@ -1,3 +1,4 @@
+;; IMPRIME UN TRIANGULO DE ASTERISCOS
 segment .data
 	aster db "*", 0
 	espacio db 10, 0
@@ -36,9 +37,3 @@ main:
 
     add rsp, 0x20
 	ret
-
-;*
-;**
-;***
-;****
-;*****

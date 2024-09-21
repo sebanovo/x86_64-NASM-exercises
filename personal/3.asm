@@ -1,3 +1,4 @@
+;; IMPRIME ASTERISCOS EN LINEA *****
 segment .data
 	aster db "*", 0
     c db 5
