@@ -24,9 +24,9 @@ ld internet.o -o internet -lkernel32 -lmsvcrt
 
 ## Direcciones de inicio:
 
-.text -> 401550
 .data -> 403010
-.bss -> 407030
+.bss  -> 407030
+.text -> 401550
 
 
 
