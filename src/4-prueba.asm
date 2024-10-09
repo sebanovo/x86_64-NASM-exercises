@@ -13,6 +13,5 @@ main:
 
     mov al, [a]
     add al, [b]
-    mov [c], rax
 
     ret 

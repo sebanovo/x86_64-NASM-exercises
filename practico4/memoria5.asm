@@ -13,8 +13,24 @@ segment .bss
 segment .text 
 global main 					
 main:
- XOR RAX,RAX
- XOR RBX,RBX
- XOR RCX,RCX
- XOR EDX,EDX
+  XOR RAX,RAX
+  XOR RBX,RBX
+  XOR RCX,RCX
+  XOR EDX,EDX
+  XOR R8,R8
+  XOR R9,R9
+  XOR R10,R10
+  XOR R11,R11
+  XOR R12,R12
+  XOR R13,R13
+  XOR R14,R14
+  XOR R15,R15
+  MOV R8,v1
+  MOV R9,[R8]
+  MOV AL,[R8]
+  MOV BX,[R8]
+  MOV ECX,[R8]
+  MOV RDX,[R8]
+  MOV R10,v4
+  MOV R10,[R10]
 ret
