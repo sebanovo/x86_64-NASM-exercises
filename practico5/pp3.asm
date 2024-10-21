@@ -1,17 +1,16 @@
 segment .data
-;aqui se declaran variables inicializadas
-var1	DB	233		;entero sin signo a nivel de byte
-var2	DB	+77		;entero con signo a nivel de byte
-var3	DB  -91		;entero con signo a nivel de byte (negativo)
-;----------------------------------------------------
-var4	DW	233		;entero sin signo a nivel de word
-var5	DW	+77		;entero con signo a nivel de word
-var6	DW  -91		;entero con signo a nivel de word (negativo)
-;----------------------------------------------------
-var7	DD	233		;entero sin signo a nivel de Double word
-var8	DD	+77		;entero con signo a nivel de Double word
-var9	DD  -91		;entero con signo a nivel de Double word (negativo)
-		
+	;aqui se declaran variables inicializadas
+	var1	DB	233		;entero sin signo a nivel de byte
+	var2	DB	+77		;entero con signo a nivel de byte
+	var3	DB  -91		;entero con signo a nivel de byte (negativo)
+	;----------------------------------------------------
+	var4	DW	233		;entero sin signo a nivel de word
+	var5	DW	+77		;entero con signo a nivel de word
+	var6	DW  -91		;entero con signo a nivel de word (negativo)
+	;----------------------------------------------------
+	var7	DD	233		;entero sin signo a nivel de Double word
+	var8	DD	+77		;entero con signo a nivel de Double word
+	var9	DD  -91		;entero con signo a nivel de Double word (negativo)
 segment .bss
 segment .text 
 	global _main 					
@@ -30,7 +29,6 @@ _main:
 	XOR  R13,R13
 	XOR  R14,R14
 	XOR  R15,R15
-
 	mov eax,var4
 	mov cl,[eax+1]
 	mov ch,[eax+5]

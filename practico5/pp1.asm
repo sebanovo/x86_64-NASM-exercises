@@ -1,14 +1,14 @@
 segment .data
-;aqui se declaran variables inicializadas
-x1 dd "ABCD"
-x2 DW -0XFF 
-x3 dd -0B0001_1111_0101_1100_1110_1010_0000_0001
-X4 DB +127  
+	;aqui se declaran variables inicializadas
+	x1 dd "ABCD"
+	x2 DW -0XFF 
+	x3 dd -0B0001_1111_0101_1100_1110_1010_0000_0001
+	X4 DB +127  
 segment .bss
-;aqui van las variables declaradas pero sin inicializar
-v1 resd 1
-v2 resw 1
-v3 resb 1
+	;aqui van las variables declaradas pero sin inicializar
+	v1 resd 1
+	v2 resw 1
+	v3 resb 1
 segment .text 
 	global _main 
 _main:

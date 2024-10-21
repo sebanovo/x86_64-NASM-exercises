@@ -8,11 +8,8 @@ segment .data
 	C   DW   +0ffffh   
 	D   DW   +7fffh 
 segment .bss
-;block storage start
-;aqui van las variables declaradas pero sin inicializar
-
 segment .text 
-global main 					
+	global main 					
 main:
 	XOR RAX,RAX
 	XOR RBX,RBX
@@ -35,4 +32,4 @@ main:
 	NOT R11
 	NOT R11
 	MOV AX,[C] 
-ret
+	ret
