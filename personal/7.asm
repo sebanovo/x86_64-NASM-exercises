@@ -1,31 +1,49 @@
+; HELLO WORD USING WINDOWS API 
+extern GetStdHandle
+extern WriteFile
+extern Sleep
+extern ExitProcess
+ 
+%define STD_OUTPUT_HANDLE (-11)
+ 
 section .data
-section .bss
+hello_str db "Hello World", 13, 10
+hello_size equ ($ - hello_str)
+ 
+output_handle dq 0
+ 
 section .text
-	global main
+ 
+global main
 main:
-	mov rax, -1
-	mov eax , 2 ; borra y afecta
+    ;Aligne la pile
+    and rsp, -16 
+    mov rbp, rsp
+ 
+    ;Récupère l'output standart
+    mov ecx, STD_OUTPUT_HANDLE
+    call GetStdHandle
+    mov [output_handle], rax
+     
+    ;Affiche le message
+    ;Shadow Space
+    sub rsp, 48
+    mov rcx, [output_handle]
+    mov rdx, hello_str
+    mov r8d, hello_size
+    mov r9, 0
+    mov QWORD [rsp + 32], 0
+    call WriteFile
+    ;Détruit l'espace de pile alloué pour les paramètres de la fonction
+    add rsp, 48
+     
+    ;Pause de 1000 millisecondes pour donner le temps de voir
+    ;Shadow Space
+    sub rsp, 0x20
+    mov ecx, 1000
+    call Sleep
 
-	mov rax, 0x3333333333333
-	not eax ; borra y afecta
-
-	mov rax, 0x3333333333333
-	neg eax ; borra y afecta
-
-	mov rax, 0x3333333333333
-	sub eax, -2 ; borra y afecta
-
-	mov rax, 0x3333333333333 
-	add eax, 1; borra y afecta
-
-	mov rax, 0x3333333333333
-	and eax, 0x22222222  ; borra y afecta
-
-	mov rax, 0x3333333333333 
-	or eax, 0x22222222  ; borra y afecta
-
-	mov rax, 0x3333333333333 
-	xor eax, 0x22222222  ; borra y afecta
-	; en conclusion cualquier operación en un registro de 32 bits
-	; borra lo que se hizo en el registro de 64
-	ret	
+    ;Quitte
+    xor rcx, rcx
+    call ExitProcess
+    ret
