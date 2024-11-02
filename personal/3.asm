@@ -1,12 +1,11 @@
-segment .data
+section .data
     aster db "*", 0     ; Asterisco
     c db 0              ; Contador inicializado en 0
     limite db 5         ; Límite superior (5 asteriscos)
-segment .bss
-segment .text
+section .bss
+section .text
     extern printf
     global main
-
 main:
     sub rsp, 0x20
 

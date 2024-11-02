@@ -21,7 +21,8 @@ szMsgErreur db "Error  N° %d",0
 section .bss
 szZoneRep   resb 80
 section .text
-Main:
+   global main
+main:
    sub rsp, 28h  
    mov rcx, 0       ; handle  fenêtre
    lea rdx,[szMsg]    ; adresse du message

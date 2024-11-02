@@ -1,4 +1,4 @@
-segment .data						
+section .data						
 	NOMBRE    DD  +0B1101.001100110011001100110011						
 	REGISTRO  DQ  -0B1101.001100110011001100110011						
 	ab     DD  0B0000_0000_0100_0000_0010_0000_0000_0000						
@@ -6,11 +6,11 @@ segment .data
 	z     DB  +0B0111_1111						
 	a     DD  -32768 
 	bb     db  0000_0001b						
-segment .bss						
+section .bss						
 	DINICIO1  RESD 1						
 	DFIN1     RESD 1						
 	CONTADOR RESB 1						
-segment .text 						
+section .text 						
 	global main 						
 main:						
 	MOV RAX,NOMBRE						

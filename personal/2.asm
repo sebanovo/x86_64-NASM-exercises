@@ -1,20 +1,19 @@
 ;; PIDE 2 NÚMEROS E IMPRIME LA SUMA
-segment .data
+section .data
 	format db "%d",0 
 
 	mensaje1 db "Introduce el numero1: " ,0
 	mensaje2 db "Introduce el numero2: " ,0
 	mensaje3 db "%d + %d = %d", 0
 
-segment .bss
+section .bss
 	numero1 resb 4 ; entero de 32 bits con signo
 	numero2 resb 4 ; entero de 32 bits con signo
 
-segment .text
+section .text
     extern printf
     extern scanf
 	global main
-
 main: 
 	sub rsp, 0x20	
 

@@ -1,4 +1,4 @@
-segment .data						
+section .data						
 	NOMBRE    DQ  -0B0.000111001100110011001101110111011101110000 						
 	REGISTRO  DQ  +0B0.000111001100110011001101110111011101110000
 	ab     DD  0B0000_0000_0100_0000_0010_0000_0000_0000						
@@ -6,11 +6,11 @@ segment .data
 	z     DB  +07FH						
 	a     DD  -32768 
 	bb     db  1
-segment .bss						
+section .bss						
 	DINICIO1  RESD 1						
 	DFIN1     RESD 1						
 	CONTADOR RESB 1						
-segment .text 						
+section .text 						
 	global main 						
 main:	
 	MOV EDX,[a]

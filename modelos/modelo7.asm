@@ -1,4 +1,4 @@
-segment .data	
+section .data	
 	NOMBRE    DD  -111.111	
 	REGISTRO  DQ  +111.111	
 	AB     DD  00403010H	
@@ -6,11 +6,11 @@ segment .data
 	Z    DB  -127	
 	A     DW  -32768	
 	BB     DW  -0000_0001b	
-segment .bss	
+section .bss	
 	DINICIO1  RESD 1	
 	DFIN1     RESD 1	
 	CONTADOR RESB 1	
-segment .text 	
+section .text 	
 	global main 	
 main:	
 	MOV EAX,NOMBRE	

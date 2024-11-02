@@ -1,5 +1,5 @@
 ;; RESTA (impares - pares) del # de registro
-segment .data
+section .data
                ;0 1 2 3 4 5 6 7 8
     registro db 2,2,3,0,4,7,3,3,3 
     ; pares  0, 6, 8  
@@ -8,9 +8,9 @@ segment .data
     ; impares = 2 + 7 + 3 = 12
     ; impares - pares = 12 - 8 = 4
 	format db "%d", 0
-segment .bss
+section .bss
     resultado resb 1
-segment .text
+section .text
 	extern printf
 	extern rand
 	global main

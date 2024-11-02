@@ -3,10 +3,7 @@ section .data
 	vector dq 10,9,8,7,6,5,4,3,2,1
 	fmt db "%llu, ", 0
 	n db 10
-section .bss
 section .text
-	global main
-
 main:
 	call print
 	mov rsi, 0

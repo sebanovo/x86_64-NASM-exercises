@@ -3,7 +3,7 @@
 ;x86_64-w64-mingw32-gcc.exe -o grupoB_110821.exe grupoB_110821.o
 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ;0000000000401550    direccion donde se alojan los programas ensamblador en el x64dbg
-segment .data	
+section .data	
 	PF   DQ  -0B101.00110011001100110011011110011001100111011
 	REG  DD -0.88
 	CICLO  DW +0B_0000_0000_0000_1111
@@ -11,10 +11,10 @@ segment .data
 	B   DB   -0B_0000_0001
 	C   DW   +0XFFFF   
 	D   DW   +0B0111_1111_1111_1111
-segment .bss	
+section .bss	
 	C1  RESD 1
 	C2  RESD 1
-segment .text 	
+section .text 	
 	global main 	
 main:	
 	MOV RAX,PF

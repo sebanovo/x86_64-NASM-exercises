@@ -4,7 +4,7 @@
 ;x86_64-w64-mingw32-gcc.exe -o 22032021.exe 22032021.o
 ;%%%%%%%%%%%%%%%%%%%%%%%
 ;%%%%%%%%%%%%%%%%%%%%%%%
-segment .data
+section .data
 	PF   DD  -0B0.000000011100110011001100110  
 	NOM  DQ  +0B0.000000011100110011001100110  
 	REG  DD  "01234678"  ; NO MODIFICAR
@@ -13,10 +13,10 @@ segment .data
     B   DB   -001H
 	C   DW   +0B1111_1111_1111_1111
 	D   DW   +07FFFH
-segment .bss
+section .bss
     C1  RESD 1
 	C2  RESD 1
-segment .text 
+section .text 
 	global main 					
 main:
 	;---------------------------------------	

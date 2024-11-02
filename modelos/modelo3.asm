@@ -3,17 +3,17 @@
 ;x86_64-w64-mingw32-gcc.exe -o grupoC_110821.exe grupoC_110821.o
 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ;0000000000401550    direccion donde se alojan los programas ensamblador en el x64dbg	
-segment .data	
+section .data	
 	X1 DD -0.79	
 	X2 DQ +0.79	
 	NOMBRE DD   "inf221sxz" ; USAR ESTAS MISMAS CADENAS NO MODIFICAR	
 	REGISTRO DD "012045679" ; USAR ESTAS MISMAS CADENAS NO MODIFICAR	
-segment .bss	
+section .bss	
 	X3 RESD 1	
 	X4 RESW 1	
 	X5 RESB 1	
 	X6 RESD 1	
-segment .text 	
+section .text 	
 	global main 	
 main:	
 	;---------------------------------------	

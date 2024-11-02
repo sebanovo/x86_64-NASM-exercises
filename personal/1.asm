@@ -1,10 +1,10 @@
 ;; IMPRIMIR UNA SUMA POR PANTALLA
-segment .data
+section .data
 	num1 db 30
 	num2 db 40
     format db "%d + %d = %d", 10,0
-segment .bss
-segment .text
+section .bss
+section .text
 	global main
 	extern printf
 main: 

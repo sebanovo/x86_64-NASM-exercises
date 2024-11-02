@@ -1,9 +1,12 @@
 extern printf
+
+global main
 section .data
-	n1 db 12
-	n2 db 10
-	fmt db "%d", 0
+	texto db "Hola mundo", 10, 0
 section .text
-	global main
-main: 
+main: 	
+	sub rsp, 0x20
+	mov rcx, texto
+	call printf
+	add rsp, 0x20
 	ret
