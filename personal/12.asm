@@ -1,9 +1,14 @@
-extern printf, scanf
+[bits 64]
+
+extern printf
+global main
 section .data
-	vector dq 10,9,8,7,6,5,4,3,2,1
+	vector dq 10,9,8,7,5,4,3,2,1  
+	n equ ($ - vector) / 8 
 	fmt db "%llu, ", 0
-	n db 10
+	salto db 10, 0
 section .text
+
 main:
 	call print
 	mov rsi, 0
@@ -13,28 +18,30 @@ main:
 	mov r9, qword[vector + rsi * 8]
 	mov r10, qword[vector + (rdi + 1) * 8]
 	cmp r10, r9
-	jl intercambiar
+	jl L1 
+	jmp L2 
 
-	inc rdi
-	cmp rdi, 9
-	jle for2
-	inc rsi
-	cmp rsi, 9
-	jl for1 
-
-	sub rsp, 0x20
-	mov rcx, n 
-	call printf
-	add rsp, 0x20
-	call print
-ret
-
-intercambiar: 
+	L1: 
 	mov r9, qword[vector + rsi * 8]
 	mov r10, qword[vector + (rdi + 1) * 8]
 	mov qword[vector + rsi * 8], r10 
 	mov qword[vector + (rdi + 1) * 8], r9
-    jmp for2	
+
+	L2:
+	inc rdi
+	cmp rdi, n - 1
+	jle for2
+	inc rsi
+	cmp rsi, n - 1
+	jl for1 
+
+	sub rsp , 0x20
+	mov rcx, salto
+	call printf
+	add rsp , 0x20
+
+	call print
+	ret
 
 print: 
 	mov rsi, 0
@@ -45,6 +52,6 @@ print:
 	call printf
 	add rsp, 0x20
 	inc rsi	
-	cmp rsi, 10
+	cmp rsi, n 
 	jl ciclo
 	ret
