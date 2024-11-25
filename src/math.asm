@@ -1,5 +1,6 @@
 %ifndef MATH_H 
 %define MATH_H
+extern system 
 
 add_numbers:
     mov rax, rdi
@@ -32,6 +33,17 @@ cube:
     ; leave es lo mismo que: 
     ; mov rsp,  rbp 
     ; pop rbp
+
+
+pausar: 
+    mov     rbp, rsp
+    sub     rsp, 32
+    lea     rax, [pausee]
+    mov     rcx, rax
+    call    system
+    add     rsp, 32
+    ret
+
 suma: 
     push rbp 
     mov rbp, rsp
@@ -43,4 +55,6 @@ suma:
     leave
     ret
 
+section .data
+    pausee db "pause", 0 
 %endif

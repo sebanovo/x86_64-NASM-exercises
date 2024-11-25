@@ -23,6 +23,6 @@ main:
 	mov rcx, msj2
 	mov rdx, cadena
 	call printf
-	
+
 	add rsp, 0x20
 	ret

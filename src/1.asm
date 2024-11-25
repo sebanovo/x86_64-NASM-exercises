@@ -19,3 +19,4 @@ main:
 
     xor     rax, rax
     call    ExitProcess
+    ret

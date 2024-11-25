@@ -35,10 +35,3 @@ main:
     add rsp, 0x20
     ret
     
-saludar: 
-    sub rsp, 0x20
-    mov rcx, f
-    call printf
-    add rsp, 0x20
-    ret
-

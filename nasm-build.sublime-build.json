@@ -1,0 +1,7 @@
+{
+    "shell_cmd": "nasm -f win64 -o ../build/${file_base_name}.o ${file} -l ../build/${file_base_name}.lst && gcc ../build/${file_base_name}.o -o ../build/${file_base_name} -lkernel32 -lmsvcrt && cd ../build && del *.o 2>nul && del *.lst 2>nul &&  ${file_base_name}",
+    "selector": "source.asm",
+    "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+    "file_patterns": ["*.asm", "*.s", "*.S", "*.inc"],
+    "shell": true,
+}

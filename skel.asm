@@ -6,36 +6,17 @@
 ;debugger: -->> x64dbg 221044043
 ;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ;-----------------------------------------
-;C:\Ensamblador\MinGW64\bin
-;C:\Ensamblador\programa
-
-;file: 221044043.asm (nombre programa)
-;registro: 221044043
-;nombres y apellidos: Pablo Daniel Castedo Suarez
-
 global main
 extern printf, scanf
 
 segment .data
-; aquí se declaran variables inicializadas
+
+segment .rdata
 
 segment .bss
-;Block Started by Symbol (BSS)
-; aquí van las variables declaradas pero sin inicializar
 
 segment .text
 
 main:
-; etiqueta de indica el comienzo del programa principal
-; aquí van las intrucciones 
-;...
-;...
-ret
 
-;==========================================
-;============= subrutina ==================
-;==========================================
-; aquí instrucciones subrutina (funcion)
-;...
-;...
-ret
+	ret
