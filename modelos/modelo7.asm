@@ -1,15 +1,15 @@
 section .data	
-	NOMBRE    DD  -111.111	
-	REGISTRO  DQ  +111.111	
-	AB     DD  00403010H	
-	AA     DD  011223344H 	
-	Z    DB  -127	
-	A     DW  -32768	
-	BB     DW  -0000_0001b	
+	NOMBRE   DD -111.111	
+	REGISTRO DQ +111.111	
+	AB       DD 00403010H	
+	AA       DD 011223344H 	
+	Z        DB -127	
+	A        DW -32768	
+	BB       DW -0000_0001b	
 section .bss	
 	DINICIO1  RESD 1	
 	DFIN1     RESD 1	
-	CONTADOR RESB 1	
+	CONTADOR  RESB 1	
 section .text 	
 	global main 	
 main:	
@@ -25,7 +25,7 @@ main:
 	JS SALTO1 	
 	JNO limpiar	
 	INICIO:	
-	    JZ  SALTO2
+	JZ  SALTO2
 	JNS  SALTO4
 	JS  SALTO3
 	jmp SALTO1
@@ -45,8 +45,8 @@ main:
 	JNO BUCLE11	
 	SALTO4:
 	BUCLE0: 
-	 JS FIN
-	 MOV DX,[A]
+	JS FIN
+	MOV DX,[A]
 	DEC DX
 	JZ BUCLE11
 	JO FIN2
@@ -68,8 +68,8 @@ main:
 	BUCLE12:
 	MOV CL,[CONTADOR]
 	BUCLE2:
-	            MOV R9,RAX
-	            DEC CL     
+	    MOV R9,RAX
+	    DEC CL     
 	JNZ BUCLE2
 	CMP AL,R9B
 	JO BUCLE0
@@ -163,4 +163,4 @@ main:
 	NOT RBX	
 	NOT RCX	
 	NOT RDX	
-RET	
+	RET	
